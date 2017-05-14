@@ -1,0 +1,8 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "promptory frontend",
+  "main": "index.js",
+  "author": "Jack Lawrence-Jones",
+  "license": "MIT"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "promptory's backend",
+  "main": "index.js",
+  "author": "Jack Lawrence-Jones",
+  "license": "MIT"
+}
