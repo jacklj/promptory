@@ -34,7 +34,6 @@ var vehicles = {
 
 app.get('/vehicle/:type', function (req, res) {
   var vehicle = req.params.type;
-  console.log(vehicle);
   if (vehicle in vehicles) {
     res.json({
       vehicle: vehicles[vehicle]

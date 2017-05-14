@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "build": "babel --presets es2015 src -d built",
-    "start": "babel --presets es2015 src -d built && node built/server.js"
+    "start": "babel --presets es2015 src -d built && node built/server.js",
+    "server": "node built/server.js"
   },
   "dependencies": {
     "express": "^4.15.2"
