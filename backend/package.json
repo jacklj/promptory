@@ -5,7 +5,15 @@
   "main": "server.js",
   "author": "Jack Lawrence-Jones",
   "license": "MIT",
+  "scripts": {
+    "build": "babel --presets es2015 src -d built",
+    "start": "babel --presets es2015 src -d built && node built/server.js"
+  },
   "dependencies": {
     "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1"
   }
 }
