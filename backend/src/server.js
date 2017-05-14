@@ -1,8 +1,9 @@
 import express from 'express';
+
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send("Hello there");
+  res.send('Hello there');
 });
 
 app.get('/hi/:name', (req, res) => {
@@ -17,13 +18,13 @@ const vehicles = {
   },
   boat: {
     wheels: 0,
-    env: 'water'
+    env: 'water',
   },
   bycicle: {
     wheels: 2,
     env: 'land',
-  }
-}
+  },
+};
 
 app.get('/vehicle/:type', (req, res) => {
   const vehicle = req.params.type;
@@ -32,10 +33,10 @@ app.get('/vehicle/:type', (req, res) => {
       vehicle: vehicles[vehicle],
     });
   } else {
-     res.status(404).send("Sorry can't find that!");
+    res.status(404).send("Sorry can't find that!");
   }
 });
 
 app.listen(8081, () => {
-  console.log("*** Server listening on port 3000 ***");
-})
+  console.log('*** Server listening on port 3000 ***');
+});

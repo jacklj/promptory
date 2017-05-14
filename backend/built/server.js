@@ -9,7 +9,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var app = (0, _express2.default)();
 
 app.get('/', function (req, res) {
-  res.send("Hello there");
+  res.send('Hello there');
 });
 
 app.get('/hi/:name', function (req, res) {
@@ -44,5 +44,5 @@ app.get('/vehicle/:type', function (req, res) {
 });
 
 app.listen(8081, function () {
-  console.log("*** Server listening on port 3000 ***");
+  console.log('*** Server listening on port 3000 ***');
 });
