@@ -17,7 +17,9 @@ import {
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { wordInput: 'Enter your word here' };
+    this.state = {
+      wordInput: '',
+    };
 
     this.lookupWord = this.lookupWord.bind(this);
   }
@@ -38,6 +40,7 @@ export default class App extends Component {
         <TextInput
           style={{height: 40, borderColor: 'gray', borderWidth: 1, margin: 5, padding: 2}}
           onChangeText={(wordInput) => this.setState({wordInput})}
+          placeholder='Type a word here'
           value={this.state.wordInput}
         />
         <Button
