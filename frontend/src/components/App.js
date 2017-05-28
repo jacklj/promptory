@@ -9,10 +9,23 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  TextInput,
+  Button,
 } from 'react-native';
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { wordInput: 'Enter your word here' };
+
+    this.lookupWord = this.lookupWord.bind(this);
+  }
+
+  lookupWord() {
+    console.warn('Word: ' + this.state.wordInput);
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -20,12 +33,19 @@ export default class App extends Component {
           Promptory.
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.android.js
+          To get started, look up a word below.
         </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+        <TextInput
+          style={{height: 40, borderColor: 'gray', borderWidth: 1, margin: 5, padding: 2}}
+          onChangeText={(wordInput) => this.setState({wordInput})}
+          value={this.state.wordInput}
+        />
+        <Button
+          onPress={this.lookupWord}
+          title="Go"
+          color="#841584"
+          accessibilityLabel="Look up the word here"
+        />
       </View>
     );
   }
