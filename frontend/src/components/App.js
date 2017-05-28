@@ -1,9 +1,8 @@
-import React from 'react';
 import {
   AppRegistry,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import Home from './Home';
+import { Home } from './Home';
 
 const App = StackNavigator({
   Home: { screen: Home },
