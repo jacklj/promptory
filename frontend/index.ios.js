@@ -12,4 +12,5 @@ export default class Promptory extends Component {
   }
 }
 
+// Register root components - AppRegistry is the JS entry point to running RN apps
 AppRegistry.registerComponent('Promptory', () => Promptory);
