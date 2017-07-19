@@ -6,6 +6,9 @@ import {
   TextInput,
   Button,
 } from 'react-native';
+import { connect } from 'react-redux';
+
+import { changeWord } from '../redux/actions';
 
 const styles = StyleSheet.create({
   container: {
@@ -42,7 +45,7 @@ class Home extends Component {
   }
 
   lookupWord() {
-    console.warn(`Word: ${this.state.wordInput}`);
+    console.warn(`Word: ${this.props.word}`);
   }
 
   render() {
@@ -56,9 +59,9 @@ class Home extends Component {
         </Text>
         <TextInput
           style={{ height: 40, borderColor: 'gray', borderWidth: 1, margin: 5, padding: 2 }}
-          onChangeText={wordInput => this.setState({ wordInput })}
+          onChangeText={wordInput => this.props.changeWord(wordInput)}
           placeholder="Type a word here"
-          value={this.state.wordInput}
+          value={this.props.word}
         />
         <Button
           onPress={this.lookupWord}
@@ -71,4 +74,18 @@ class Home extends Component {
   }
 }
 
-export default Home;
+Home.propTypes = {
+  word: React.PropTypes.string.isRequired,
+  // action creators
+  changeWord: React.PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => ({
+  word: state.word,
+});
+
+const mapDispatchToProps = {
+  changeWord,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

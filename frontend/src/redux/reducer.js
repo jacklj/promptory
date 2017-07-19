@@ -5,7 +5,7 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-  switch (action) {
+  switch (action.type) {
     case actionTypes.WORD.CHANGE:
       return {
         word: action.word,
