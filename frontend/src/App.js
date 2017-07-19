@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { StackNavigator } from 'react-navigation';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import devToolsEnhancer from 'remote-redux-devtools';
+// TODO: only have devTools on dev, not prod. JackLJ 19/7/2017
 
 import reducer from './redux/reducer';
 import Home from './components/Home';
 
-const store = createStore(reducer);
+const store = createStore(reducer, devToolsEnhancer());
 
 const App = StackNavigator({
   Home: { screen: Home },
