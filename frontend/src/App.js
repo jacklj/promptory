@@ -7,11 +7,13 @@ import devToolsEnhancer from 'remote-redux-devtools';
 
 import reducer from './redux/reducer';
 import Home from './components/Home';
+import Definition from './components/Definition';
 
 const store = createStore(reducer, devToolsEnhancer());
 
 const App = StackNavigator({
   Home: { screen: Home },
+  Definition: { screen: Definition },
 });
 
 export default class ReduxWrappedApp extends Component {

@@ -26,7 +26,8 @@ class Home extends Component {
   }
 
   lookupWord() {
-    console.warn(`Word: ${this.props.word}`);
+    const { navigate } = this.props.navigation;
+    navigate('Definition');
   }
 
   render() {
@@ -59,6 +60,10 @@ Home.propTypes = {
   word: React.PropTypes.string.isRequired,
   // action creators
   changeWord: React.PropTypes.func.isRequired,
+  // react navigation
+  /* eslint-disable react/forbid-prop-types */
+  navigation: React.PropTypes.object.isRequired,
+  /* eslint-enable react/forbid-prop-types */
 };
 
 const mapStateToProps = state => ({
