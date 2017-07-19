@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet,
   Text,
   View,
   TextInput,
@@ -9,26 +8,7 @@ import {
 import { connect } from 'react-redux';
 
 import { changeWord } from '../redux/actions';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-    fontStyle: 'italic',
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+import styles from './Home.styles';
 
 class Home extends Component {
   static navigationOptions = {
@@ -37,11 +17,12 @@ class Home extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      wordInput: '',
-    };
-
+    this.onWordChange = this.onWordChange.bind(this);
     this.lookupWord = this.lookupWord.bind(this);
+  }
+
+  onWordChange(word) {
+    this.props.changeWord(word);
   }
 
   lookupWord() {
@@ -58,8 +39,8 @@ class Home extends Component {
           To get started, look up a word below.
         </Text>
         <TextInput
-          style={{ height: 40, borderColor: 'gray', borderWidth: 1, margin: 5, padding: 2 }}
-          onChangeText={wordInput => this.props.changeWord(wordInput)}
+          style={styles.input}
+          onChangeText={this.onWordChange}
           placeholder="Type a word here"
           value={this.props.word}
         />
