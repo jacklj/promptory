@@ -29,6 +29,8 @@
     "max-len": ["error", 110, 2, {"ignoreUrls": true}],
     "import/no-unresolved": 0,
     "no-underscore-dangle": 0,
-    "no-confusing-arrow": ["error", {"allowParens": true}]
+    "no-confusing-arrow": ["error", {"allowParens": true}],
+    "react/jsx-filename-extension": 0,
+    "react/prefer-stateless-function": 0	
   }
 }
