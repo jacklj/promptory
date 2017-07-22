@@ -1,14 +1,11 @@
-const adverbs = require('./Adverb.js').data;
-const adjectives = require('./Adjective.js').data;
-const verbs = require('./Verb.js').data;
-const nouns = require('./Noun.js').data;
+import { adverbs, adjectives, verbs, nouns} from './dictionary';
 
 const linearSearch = (word, subDictionary) => {
   const results = [];
-  for (let i = 0; i < subDictionary.length; i++) {
+  for (let i = 0; i < subDictionary.length; i += 1) {
     const entity = subDictionary[i];
     const words = entity.words;
-    for (let j = 0; j < words.length; j++) {
+    for (let j = 0; j < words.length; j += 1) {
       if (words[j] === word) {
         results.push(entity);
       }
@@ -19,7 +16,7 @@ const linearSearch = (word, subDictionary) => {
 
 const searchAllEntities = (word, dictionary, partsOfSpeech) => {
   let results = [];
-  for (let i = 0; i < partsOfSpeech.length; i++) {
+  for (let i = 0; i < partsOfSpeech.length; i += 1) {
     const pos = partsOfSpeech[i];
     const subDictionary = dictionary[pos];
     const subResults = linearSearch(word, subDictionary);
@@ -61,3 +58,5 @@ const lookUpWord = word => {
   })
   return transformedResults;
 };
+
+export default lookUpWord;

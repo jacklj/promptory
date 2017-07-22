@@ -6,14 +6,38 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 
+import lookUpWord from '../services/dictionaryLookup';
+
 class Definition extends Component {
   static navigationOptions = {
     title: 'Definition',
   };
 
+  static renderResults(results) {
+    const jsx = [];
+    for (const i = 0; i < results.length; i += 1) {
+      const result = results[i];
+      const jsxItem = (
+        <View>
+          <Text style={{ fontSize: 12, fontStyle: 'italic' }}>
+            {result.partOfSpeech}
+          </Text>
+          <Text style={{ fontStyle: 15 }}>
+            {result.definition}
+          </Text>
+        </View>
+      );
+    }
+  }
+
   constructor(props) {
     super(props);
     this.goBack = this.goBack.bind(this);
+
+    const results = lookupWord(props.word);
+    this.state = {
+      results,
+    };
   }
 
   goBack() {
@@ -27,9 +51,7 @@ class Definition extends Component {
         <Text style={{ fontSize: 20 }}>
           {this.props.word}:
         </Text>
-        <Text style={{ fontStyle: 'italic' }}>
-          definition
-        </Text>
+        {Definition.renderResults(this.state.results)}
         <Button
           onPress={this.goBack}
           title="< Back"
