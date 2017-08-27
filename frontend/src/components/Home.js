@@ -19,6 +19,7 @@ class Home extends Component {
     super(props);
     this.onWordChange = this.onWordChange.bind(this);
     this.lookupWord = this.lookupWord.bind(this);
+    this.goToCards = this.goToCards.bind(this);
   }
 
   onWordChange(word) {
@@ -28,6 +29,11 @@ class Home extends Component {
   lookupWord() {
     const { navigate } = this.props.navigation;
     navigate('Definition');
+  }
+
+  goToCards() {
+    const { navigate } = this.props.navigation;
+    navigate('FlashCards');
   }
 
   render() {
@@ -50,6 +56,12 @@ class Home extends Component {
           title="Go"
           color="#841584"
           accessibilityLabel="Look up the word here"
+        />
+        <Button
+          onPress={this.goToCards}
+          title="Learn"
+          color="#841584"
+          accessibilityLabel="Go to your flashcards"
         />
       </View>
     );
