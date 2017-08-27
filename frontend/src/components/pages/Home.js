@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 
-import { changeWord } from '../redux/actions';
+import { changeWord } from '../../redux/actions';
 import styles from './Home.styles';
 
 class Home extends Component {
