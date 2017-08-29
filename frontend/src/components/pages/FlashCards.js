@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
+import Card from '../ui-tools/Card';
+
 export default class FlashCards extends Component {
   render() {
     return (
@@ -9,20 +11,14 @@ export default class FlashCards extends Component {
           <Text>Flashcards</Text>
         </View>
         <View>
-          <View style={{ backgroundColor: '#841584' }}>
-            <View>
-              <Text>A flashcard title</Text>
-            </View>
-            <View>
-              <Text>A flashcard content</Text>
-            </View>
-          </View>
-          <View>
-            <Text>A flashcard title</Text>
-          </View>
-          <View>
-            <Text>A flashcard content</Text>
-          </View>
+          <Card
+            word="Establishment"
+            definition="Blah blahs b alssal hsalhbsalhb. jnkjnsd jsdn kjfn."
+          />
+          <Card
+            word="Card"
+            definition="yaka yaka yaka"
+          />
         </View>
       </View>
     );
