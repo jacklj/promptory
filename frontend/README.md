@@ -19,6 +19,8 @@ Dictionaries
 1. [wordnet.js](https://github.com/nlp-compromise/wordnet.js) (an opinionated assembly of wordnet for javascript) ([npm](https://www.npmjs.com/package/wordnetjs))
 2. [WordNet in JSON Format](https://github.com/fluhus/wordnet-to-json)
 
+#### sql
+1. https://sourceforge.net/projects/wnsql/files/wnsql3/
 
 TIL
 ----
