@@ -19,6 +19,8 @@ Dictionaries
 1. [wordnet.js](https://github.com/nlp-compromise/wordnet.js) (an opinionated assembly of wordnet for javascript) ([npm](https://www.npmjs.com/package/wordnetjs))
 2. [WordNet in JSON Format](https://github.com/fluhus/wordnet-to-json)
 
+#### sql
+1. https://sourceforge.net/projects/wnsql/files/wnsql3/
 
 TIL
 ----
@@ -31,7 +33,7 @@ Solutions:
 1. [ReactNativify](https://github.com/philikon/ReactNativify) or
    [rn-nodeify](https://github.com/mvayngrib/rn-nodeify) - allow react-native
    projects to use node core modules. But this looks very fragile and tricky
-2. Remove the built-in node module requireing code!
+2. Remove the built-in node module requiring code!
 
 
 Storing large amounts of data in RN app: https://stackoverflow.com/questions/34935837/best-approach-for-storing-large-data-collection-from-json-api-in-react-native

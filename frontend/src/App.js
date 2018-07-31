@@ -6,14 +6,16 @@ import devToolsEnhancer from 'remote-redux-devtools';
 // TODO: only have devTools on dev, not prod. JackLJ 19/7/2017
 
 import reducer from './redux/reducer';
-import Home from './components/Home';
-import Definition from './components/Definition';
+import Home from './components/pages/Home';
+import Definition from './components/pages/Definition';
+import FlashCards from './components/pages/FlashCards';
 
 const store = createStore(reducer, devToolsEnhancer());
 
 const App = StackNavigator({
   Home: { screen: Home },
   Definition: { screen: Definition },
+  FlashCards: { screen: FlashCards },
 });
 
 export default class ReduxWrappedApp extends Component {
